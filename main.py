@@ -4,6 +4,13 @@ import math as m
 import mouse
 
 cap = cv2.VideoCapture(0)
+if not cap.isOpened():
+    print("❌ Error: Could not open webcam.")
+    print("Please check:")
+    print("  1. Webcam is connected")
+    print("  2. Camera is not in use by another app")
+    print("  3. Camera permissions are granted")
+    exit(1)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
